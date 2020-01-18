@@ -40,9 +40,9 @@ namespace WindowsSimpleCalculator
             }
             else
             {
+                result.Text = result.Text + b.Text;
 
             }
-            result.Text = result.Text + b.Text;
         }
 
         private void button15_Click(object sender, EventArgs e)
@@ -53,10 +53,22 @@ namespace WindowsSimpleCalculator
         private void operator_click(object sender, EventArgs e)
         {
             Button b = (Button)sender;
-            operation = b.Text;
-            value = double.Parse(result.Text);
-            isOperationPressed = true;
-            equation.Text = value + " " + operation;
+
+            if (value != 0)
+            {
+                button17.PerformClick();
+                isOperationPressed = true;
+                operation = b.Text;
+                equation.Text = value + " " + operation;
+            }
+            else
+            {
+                operation = b.Text;
+                value = double.Parse(result.Text);
+                isOperationPressed = true;
+                equation.Text = value + " " + operation;
+            }
+           
         }
 
         private void button17_Click(object sender, EventArgs e)
@@ -81,7 +93,7 @@ namespace WindowsSimpleCalculator
                 default:
                     break;
             }
-            value  = Int32.Parse(result.Text);
+            value = double.Parse(result.Text);
             operation = "";
         }
 
@@ -89,6 +101,11 @@ namespace WindowsSimpleCalculator
         {
             result.Text = "0";
             value = 0;
+        }
+
+        private void Form1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
         }
     }
 }
