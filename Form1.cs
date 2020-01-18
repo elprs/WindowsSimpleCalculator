@@ -31,7 +31,17 @@ namespace WindowsSimpleCalculator
             {
                 result.Clear();
             }
+            isOperationPressed = false;
             Button b = (Button)sender;
+            if(b.Text ==".")
+            {
+                if (!result.Text.Contains("."))
+                    result.Text = result.Text + b.Text;
+            }
+            else
+            {
+
+            }
             result.Text = result.Text + b.Text;
         }
 
@@ -46,6 +56,39 @@ namespace WindowsSimpleCalculator
             operation = b.Text;
             value = double.Parse(result.Text);
             isOperationPressed = true;
+            equation.Text = value + " " + operation;
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+
+            equation.Text = "";
+
+            switch (operation)
+            {
+                case "+":
+                    result.Text = (value + double.Parse(result.Text)).ToString();
+                    break; 
+                case "-":
+                    result.Text = (value - double.Parse(result.Text)).ToString();
+                    break; 
+                case "*":
+                    result.Text = (value * double.Parse(result.Text)).ToString();
+                    break; 
+                case "/":
+                    result.Text = (value / double.Parse(result.Text)).ToString();
+                    break;
+                default:
+                    break;
+            }
+            value  = Int32.Parse(result.Text);
+            operation = "";
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            result.Text = "0";
+            value = 0;
         }
     }
 }

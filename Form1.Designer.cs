@@ -48,6 +48,7 @@
             this.button18 = new System.Windows.Forms.Button();
             this.button19 = new System.Windows.Forms.Button();
             this.result = new System.Windows.Forms.TextBox();
+            this.equation = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -201,6 +202,7 @@
             this.button14.TabIndex = 14;
             this.button14.Text = "c";
             this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
             // button15
             // 
@@ -233,6 +235,7 @@
             this.button17.TabIndex = 17;
             this.button17.Text = "=";
             this.button17.UseVisualStyleBackColor = true;
+            this.button17.Click += new System.EventHandler(this.button17_Click);
             // 
             // button18
             // 
@@ -266,11 +269,23 @@
             this.result.Text = "0";
             this.result.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
+            // equation
+            // 
+            this.equation.AutoSize = true;
+            this.equation.BackColor = System.Drawing.SystemColors.Window;
+            this.equation.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.equation.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.equation.Location = new System.Drawing.Point(24, 47);
+            this.equation.Name = "equation";
+            this.equation.Size = new System.Drawing.Size(0, 48);
+            this.equation.TabIndex = 21;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(558, 569);
+            this.Controls.Add(this.equation);
             this.Controls.Add(this.result);
             this.Controls.Add(this.button19);
             this.Controls.Add(this.button18);
@@ -292,6 +307,8 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button1);
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(586, 648);
+            this.MinimumSize = new System.Drawing.Size(586, 648);
             this.Name = "Form1";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -323,6 +340,7 @@
         private System.Windows.Forms.Button button18;
         private System.Windows.Forms.Button button19;
         private System.Windows.Forms.TextBox result;
+        private System.Windows.Forms.Label equation;
     }
 }
 
